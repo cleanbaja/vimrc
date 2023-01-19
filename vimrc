@@ -21,11 +21,12 @@ call plug#end()
 
 " vim basics
 filetype plugin indent on | syntax enable
-set modeline modelines=5  hlsearch  laststatus=2
-set wildmenu lazyredraw   showcmd   scrolloff=1
-set autoread smarttab     backspace=indent,eol,start
-set ruler    incsearch    display+=lastline
-set list     autoindent   listchars=tab:\>\ ,lead:.,trail:^,nbsp:#
+set modeline modelines=5  hlsearch    laststatus=2
+set wildmenu lazyredraw   showcmd     scrolloff=1
+set autoread smarttab     scrolloff=1 complete-=i
+set ruler    incsearch    autoindent  noshowmode
+set list     listchars=tab:\>\ ,lead:.,trail:^,nbsp:#
+set display+=lastline backspace=indent,eol,start
 
 " colorscheme stuff
 if (has('termguicolors'))
