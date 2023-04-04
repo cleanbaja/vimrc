@@ -2,6 +2,8 @@
 
 set -e
 
+mkdir ~/.vim && cd ~/.vim
+
 # Create a local.vim for machine-specific customization
 grep -sq 'VimrcLocal' after/plugin/local.vim || {
 	mkdir -p after/plugin
