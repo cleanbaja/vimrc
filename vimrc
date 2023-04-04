@@ -11,7 +11,7 @@ Plug 'tpope/vim-sleuth'
 
 " UI based Plugins
 Plug 'itchyny/lightline.vim'
-Plug 'cleanbaja/ayu-vim'
+Plug 'lifepillar/vim-solarized8'
 
 " Programming Languages
 Plug 'https://git.sr.ht/~sircmpwn/hare.vim'
@@ -28,25 +28,28 @@ set ruler    incsearch    autoindent  noshowmode
 set list     listchars=tab:\>\ ,lead:.,trail:^,nbsp:#
 set display+=lastline backspace=indent,eol,start
 
-" colorscheme stuff
+" enable true colors
 if (has('termguicolors'))
-  set t_Co=256
-  set termguicolors
+    set t_Co=256
+    set termguicolors
 endif
-let ayucolor="mirage"
-colo ayu
+
+" set the colorscheme to solarized
+set background=light
+colo solarized8
+let g:lightline = {
+    \ 'colorscheme': 'solarized',
+    \ }
 
 " helper function to switch color scheme
 function ToggleColorScheme()
-    if g:ayucolor ==# "mirage"
-        let g:ayucolor="light"
-    elseif g:ayucolor ==# "light"
-        let g:ayucolor="dark"
+    if &background ==# "light"
+        set background="dark"
     else
-        let g:ayucolor="mirage"
+        set background="light"
     endif
 
-    colorscheme ayu
+    colorscheme solarized8
 endfunction
 
 " vimrc related commands
